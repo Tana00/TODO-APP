@@ -1,26 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react';
+import TodoItem from './TodoItem';
+import "./index.scss";
+import 'bootstrap/dist/css/bootstrap.css';
 
-class TodoList extends Component {
-  componentDidUpdate() {
-    this.props.inputElement.current.focus()
-  }
+
+class TodoList extends React.Component {
   render() {
     return (
-      <div className="todoListMain">
-        <div className="header">
-          <form onSubmit={this.props.addItem}>
-            <input
-              placeholder="Task"
-              ref={this.props.inputElement}
-              value={this.props.currentItem.text}
-              onChange={this.props.handleInput}
-            />
-            <button type="submit"> Add Task </button>
-          </form>
-        </div>
-      </div>
-    )
+      <ul className="todolist">
+        {this.props.items.map(item => (
+          <TodoItem key={item.id} id={item.id} text={item.text} completed={item.done} onItemCompleted={this.props.onItemCompleted} onDeleteItem={this.props.onDeleteItem} />
+        ))}
+      </ul>
+    );
   }
 }
 
-export default TodoList
+export default TodoList;

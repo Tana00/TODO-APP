@@ -1,0 +1,45 @@
+.App {
+  margin: 0 5em;
+  padding: 1em 5em;
+  background-color: #66ccff;
+  border: 1px solid #66ccff;
+}
+.apptitle {
+  margin: 1rem 0;
+  color: #0066ff;
+}
+
+.todolist {
+  padding-left: 0;
+
+  .todoitem {
+    position: relative;
+    margin-bottom: 0.9rem;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.5);
+    
+    &.done {
+      .form-check-label {
+        color: #999;
+        text-decoration: line-through;
+       
+      }
+    }
+    
+    .btn-danger {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+    
+    .form-check-label {
+      width: 100%;
+      margin-left: 1em;
+
+      .form-check-input {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
